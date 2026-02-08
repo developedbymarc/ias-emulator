@@ -1,0 +1,44 @@
+LOAD M(30)         ; ADD M(31)              // setting address of last element + 1
+STOR M(32)         ; LOAD M(40)             // then LOAD first and set as initial max
+STOR M(33)         ; LOAD M(31)             // then check the loop condition (curr_idx - last_idx) < 0
+SUB M(32)          ; JUMP+ M(9,20:39)       // jump to last print instruction if AC is non-negative, otherwise continue the algorithm
+LOAD M(33)         ; SUB M(40)              // check if current_element > current_max
+JUMP+ M(6,20:39)   ; LOAD M(40)             // if true: update current_max, otherwise jump to updating curr_idx
+STOR M(33)         ; LOAD M(31)             // incrementing M(31) and storing wherever it is used
+ADD M(20)          ; STOR M(31)             //
+STOR M(4,28:39)    ; STOR M(5,28:39)        //
+JUMP M(2,20:39)    ; PRINT M(33)            // jump back to start of the loop  ;  print instruction only reached through the JUMP+ instruction at address [3,20:39]
+
+
+
+
+
+
+
+
+
+
+1       // Constant 1
+
+
+
+
+
+
+
+
+
+4       // N
+40      // Address of first element in the set
+0       // Address of last element+1 in the set: N + 40
+0       // Current maximum element of the set
+
+
+
+
+
+
+-19
+-4
+-8
+-10

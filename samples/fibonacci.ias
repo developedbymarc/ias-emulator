@@ -1,0 +1,24 @@
+PRINT M(22)    ; PRINT M(23)  // print first two: 0 & 1
+LOAD -M(20)    ; ADD M(21)    // AC = curr_iter - iters
+JUMP+ M(9,0:19); LOAD M(22)
+ADD M(23)      ; STOR M(23)   // (new b) = a + b
+LOAD M(23)     ; SUB M(22)
+STOR M(22)     ; LOAD M(21)   // (new a) = (new b) - a
+ADD M(10)      ; STOR M(21)   // increment iteration counter
+JUMP M(0,20:39)
+
+
+1  // constant 1
+
+
+
+
+
+
+
+
+
+50  // number of iterations
+0  // current iteration
+0  // a
+1  // b

@@ -1,0 +1,18 @@
+# compiled executables
+bin/*
+*.exe
+*.out
+
+# memory snapshot files
+*.log
+*.json
+
+# OS garbage
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.vs/
+.idea/
+cmake-build-*/
